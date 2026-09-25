@@ -3,8 +3,8 @@ const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT;
-const uri = process.env.MONGO_URI;
+const port = 3001;
+const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri);
 
@@ -31,6 +31,6 @@ app.get("/", async (req, res) => {
 });
 
 // Port
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on port http://localhost:${port}`);
 }); //start the server
